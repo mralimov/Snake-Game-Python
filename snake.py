@@ -19,8 +19,24 @@ class Snake:
             self.all_snakes.append(snake)
 
     def move(self):
-         for snake_i in range(len(self.all_snakes)-1, 0, -1):
+        for snake_i in range(len(self.all_snakes)-1, 0, -1):
             new_x = self.all_snakes[snake_i - 1].xcor()
             new_y = self.all_snakes[snake_i - 1].ycor()
             self.all_snakes[snake_i].goto(new_x, new_y)
         self.all_snakes[0].forward(20)
+
+        def up(self):
+        if self.head.setheading() != DOWN:
+            self.head.setheading(UP)
+
+    def down(self):
+        if self.head.setheading() != UP:
+            self.head.setheading(DOWN)
+
+    def right(self):
+        if self.head.setheading() != LEFT:
+            self.head.setheading(RIGHT)
+
+    def left(self):
+        if self.head.setheading() != RIGHT:
+            self.head.setheading(LEFT)
