@@ -43,3 +43,6 @@ class Snake:
         snake.penup()
         snake.goto(position)
         self.all_snakes.append(snake)
+
+    def extend(self):
+        self.add_snake(self.all_snakes[-1].position())
