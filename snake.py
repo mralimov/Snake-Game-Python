@@ -46,3 +46,10 @@ class Snake:
 
     def extend(self):
         self.add_snake(self.all_snakes[-1].position())
+
+    def reset_game(self):
+        for snake in self.all_snakes:
+            snake.goto(500, 500)
+        self.all_snakes.clear()
+        self.create_snake()
+        self.head = self.all_snakes[0]
